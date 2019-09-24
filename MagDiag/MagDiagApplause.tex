@@ -99,12 +99,12 @@
 %\smiley
 %\frownie
 
-%\title[Magnetic Diagnostics for Plasmas, APPLAuSE, European PhD]{Magnetic Diagnostics for Plasmas}
-\title[Magnetic Diagnostics, IAEA fusion training course]{Magnetic Diagnostics for Plasmas}
+\title[Magnetic Diagnostics for Plasmas, APPLAuSE]{Magnetic Diagnostics for Plasmas}
+%\title[Magnetic Diagnostics, IAEA fusion training course]{Magnetic Diagnostics for Plasmas}
 
 %\subtitle{CURRICULAR UNIT: Methodologies \& Techniques}
 
-\author[B.~Carvalho, 25 July 2019] % (optional, use only with lots of authors)
+\author[B.~Carvalho, 25 September 2019] % (optional, use only with lots of authors)
 {\href{mailto:bernardo.carvalho@tecnico.ulisboa.pt}{\nolinkurl{bernardo.carvalho@tecnico.ulisboa.pt}} }
 % \inst{1}  \and S.~Another\inst{2}
 % - Give the names in the same order as the appear in the paper.
@@ -291,7 +291,7 @@
 %%%%%%%%%%%%%%%%%%%%%%
 \subsection{General Principles}
 
-\begin{frame}{ Magnetic Diagnostics: General Principles}%{Subtitles are optional.}
+\begin{frame}{ Magnetic Diagnostics in Fusion: General Principles}%{Subtitles are optional.}
     Magnetic measurements provide some of the most   \alert{fundamental} and %fundamental
 \alert{essential} information about a fusion plasma:
 
@@ -396,7 +396,7 @@
 \end{columns}
 \end{frame}
 
-\begin{frame}{Axisymmetric Configuration}{Flux Surfaces}
+\begin{frame}{Axisymmetric Configuration}{Equilibrium Flux Surfaces}
 Both Fluxes, { $\color{blue} (\Psi$}, {\color{red} $F$}) are constant on the  \texttt{Flux Surfaces}:
 	\begin{figure}[ht]
 	\begin{center}
@@ -457,7 +457,7 @@ $ \begin{array}{ccl}
 %   \begin{itemize}
  %  	\item<2->
 	$ \begin{array}{rl}
-	  \Psi (x') &= - \int_\Omega G(x,x') J_\phi^{ext} (x) d x  \\
+	  \Psi (x') &= - \int_\Omega G(x,x') J_\phi (x) d x  \\
 	  	&+ \oint_{\partial \Omega} \frac{1}{\mu_0 R} \left ( \Psi  \frac{\partial G }{\partial n}
 		 - G \frac{\partial \Psi }{\partial n} \right ) dS \\
 		x' &= \textrm{ \small point in } \Omega \\
@@ -480,11 +480,11 @@ $ \begin{array}{ccl}
 \end{columns}
 \end{frame}
 
- \begin{frame}{Equilibrium reconstruction}{Basic restriction for  the magnetic diagnostics }
+ \begin{frame}{Equilibrium reconstruction}{Basic restriction for  external  magnetic diagnostics }
  \begin{columns}
  \column{0.65\textwidth}
 	\begin{block}{Green$'$s Theorem }
-		$\Omega$ bounded by Plasma and $r \to \infty$.
+		Volume Domain $\Omega$ bounded by Plasma and $r \to \infty$.
 	\end{block}
 
 %	$ \begin{array}{rl}
@@ -504,7 +504,7 @@ $\Psi (x') = $
 			$ + \oint_{\partial \Omega} \frac{1}{\mu_0 R} \Psi  \frac{\partial G }{\partial n}  dS$ \\
 			$  - \oint_{\partial \Omega} \frac{1}{\mu_0 R} G \frac{\partial \Psi }{\partial n} dS $
 			}
-	\only<2>  {   $ - \int_\Omega G(x,x') J_\phi (x) d x$\\
+	\only<2>  {   $ - \int_\Omega G(x,x') J_\phi^{ext}(x) d x$\\
 \fbox{ \color{red}  $ + \oint_{\partial \Omega} \frac{1}{\mu_0 R} \Psi  \frac{\partial G }{\partial n}  dS$ ,   $ \Psi = C^{nst}$  at the boundary } \\
 			$  - \oint_{\partial \Omega} \frac{1}{\mu_0 R} G \frac{\partial \Psi }{\partial n} dS $}
 	\only<3>  {   $ - \int_\Omega G(x,x') J_\phi (x) d x$\\
@@ -529,8 +529,8 @@ Term 3 is the only one that depends on internal current, $J_{\phi}^{plasma}$.
 
  \begin{frame}{Equilibrium reconstruction}{Basic restriction for  the magnetic diagnostics }
  \begin{block}{}
-BUT solution depends only on $B_t$ distribution on the Plasma boundary.
-Since many distributions, $J_\phi^{plasma}(r)$, give the SAME  $B_t$.
+BUT solution depends only on $B_t =  \frac{1}{ R}  \frac{\partial \Psi }{\partial n} $ distribution on the Plasma boundary.
+There are infinitive distributions, $J_\phi^{plasma}(r)$, give the SAME  $B_t$ distribution.
 \end{block}
 
  \begin{block}{Reconstruction $\Psi(R,Z)$ in \textbf{Vacuum}  \smiley }
@@ -544,7 +544,7 @@ Since many distributions, $J_\phi^{plasma}(r)$, give the SAME  $B_t$.
 %\fbox{
  {\color<2->{red}
 	External  measurements alone  CANNOT distinguish  different internal current,
-	$J_\phi(r)^{plasma}$ and $\Psi^{plasma}(R,Z)$ INSIDE the plasma! \frownie
+	$J_\phi(r)^{plasma}$ and $\Psi^{plasma}(R,Z)$ distributions INSIDE the plasma! \frownie
 }
 %%}
 \end{block}
@@ -566,7 +566,7 @@ or other (infinite) volume  distributions.
 \end{columns}
 
  \begin{block}{Reconstruction inside a sphere }
-	External  measurements  CANNOT distinguish different Volume charge distributions.
+	External  $\vec{E}(r)$ measurements  CANNOT distinguish different Volume charge distributions.
 \end{block}
 \end{frame}
 
@@ -601,7 +601,7 @@ or other (infinite) volume  distributions.
 	\end{figure}
 \end{frame}
 
-\begin{frame}{Magnetic Inductive Sensors } {Signal is a time derivative }
+\begin{frame}{Magnetic Inductive Sensors } {Probe signal is always a time derivative }
 % \begin{columns}
 % \column{0.7\textwidth}
 % \column{0.3\textwidth}
@@ -615,8 +615,9 @@ or other (infinite) volume  distributions.
 $
  \begin{array}{cl}
  V_{sensor} (t) &= \oint \vec{E} \cdot \vec{d s}  =
-  - \frac{\partial \Phi(t)}{\partial t} = NA\dot {B}\textrm{ , Faraday Law} \\
-\Phi(t) &= \int_{t_0}^t V(t') d t'
+  - \frac{\partial \Phi(t)}{\partial t} = NA\dot{B}\textrm{  (Faraday Law)} \\
+\Phi(t) &= \int_{t_0}^t V_{sensor}(t') d t' \\
+B & \cong -  \frac{\Phi(t) } {NA}  =  -  \frac{\int_{t_0}^t V_{sensor}(t') d t' } {NA} \textrm{,   (A: Loop Area)}
 \end{array}
 $
 
@@ -690,7 +691,7 @@ $\Psi_{i} =\Psi(R, Z)  - \Psi_{ref} $
 \begin{columns}
  \column{0.5\textwidth}
      \begin{itemize}
-	 \item Measure the toroidal magnetic flux for the purpose of estimating the thermal energy of the plasma $\langle p \rangle  \propto W$.
+	 \item Measures the toroidal magnetic flux for the purpose of estimating the thermal energy of the plasma $\langle p \rangle  \propto W$.
 	 \item Normally located in a poloidal plane  to minimize coupling to the $B_{pol}$.
 	\item At low beta, the change in the total toroidal flux is small.
 	$\beta = 2 \mu_0 \langle p \rangle  /B^2 \ll 1$
@@ -806,7 +807,7 @@ $$\Delta' = \frac{r}{R} \Lambda, \quad \Lambda=\beta_{pol} + \ell_i /2$$
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Local Inductive Magnetic Probes }
 
-\begin{frame}{Magnetic Probes} % { Integral  quantities II}
+\begin{frame}{Magnetic Local Probes} 
 \begin{columns}
  \column{0.6\textwidth}
      	\begin{itemize}
@@ -987,18 +988,18 @@ $V_{out}(t) = -\frac{1}{\tau} \int_0^t V_{in}(t') dt' = \Phi (t)  / \tau $
   \column{0.5\textwidth}
 	\begin{itemize}
 		\item Automatic drift-compensation: Measurement of drift before integration, store and compensate offset during integration.
-		\item<2-> Drift can be reduced down to  several $0.1mVs @ 1000s$
+		\item<2-> Drift can be reduced down to   $1mVs @ 1000s$
 		\item<3->  But worse values if signal  is applied during drift  compensation!
 	\end{itemize}
 \column{0.5\textwidth}
 	\begin{center}
 	\includegraphics[width=0.8\columnwidth]{toreSupreInt.png}
-	\begin{block}<4->{Tore Supra}
-	Drift achieved: $ < 135 \mu Vs @ 1000\,  s$
+%	\begin{block}<4->{Tore Supra}
+%	Drift achieved: $ < 135 \mu Vs @ 1000\,  s$
 
 %		 %		 A reference signal coupled to $B_{\phi, vacuum}$ is usually subtracted:
 %		$ \Delta \Phi_{diag} =  \Phi_{total}  -   \Phi_{vacuum}$ % \approx \frac{2 \kappa}{1 +\kappa^2}  \frac{(\mu_0 I_p)^2}{8 \pi B_{\phi, vacuum)}} (1 - \beta_p) $
-	\end{block}
+%	\end{block}
 	\end{center}
 \end{columns}
 \end{frame}
@@ -1013,7 +1014,7 @@ $V_{out}(t) = -\frac{1}{\tau} \int_0^t V_{in}(t') dt' = \Phi (t)  / \tau $
 		\item Dynamic range limited by input stage
 		\item Not affected by input stage semiconductors
 %		\tem  No $1 / f$ noise
-		\item Complex offset correction algorithms feasible
+		\item Offset correction algorithms feasible in Real Time (e.g. FPGA)
 %\ Very simple consumer electronics!
  	\end{itemize}
 %
@@ -1032,18 +1033,26 @@ $V_{out}(t) = -\frac{1}{\tau} \int_0^t V_{in}(t') dt' = \Phi (t)  / \tau $
 
 \begin{frame}{Digital Integrators}{IST prototype}
 \begin{columns}
-  \column{0.3\textwidth}
+  \column{0.35\textwidth}
 	\begin{itemize}
-		\item $100 s$ drift  compensation
-		\item $1000 s$ run “Cold Integrator”
+		\item $100 s$ Drift  measuring compensation phase
+		\item Drift Compensated in FPGA
+		\item Drift reduced down to   $< 500 \mu V \cdot s @ 1000s$ 
 	\end{itemize}
-    \column{0.7\textwidth}
+    \column{0.65\textwidth}
 	\begin{center}
 		\includegraphics[height = 3 cm]{w7xDrift.png}
 
 		\includegraphics[height = 1 cm]{AtcaAdc.jpg}
 	\end{center}
 \end{columns}
+\end{frame}
+
+\begin{frame}{IST/F4E prototype for chopper digital integrator}{ITER magnetics}
+	\begin{center}
+		\includegraphics[width=\columnwidth]{F4Integrator}
+
+	\end{center}
 \end{frame}
 
 
@@ -1053,15 +1062,15 @@ $V_{out}(t) = -\frac{1}{\tau} \int_0^t V_{in}(t') dt' = \Phi (t)  / \tau $
 
 %non-Integrated signal from Inductive probes
 \subsection{Non-Integrated signals}
-\begin{frame}{Non-Integrated Signal}{Inductive probes}
+\begin{frame}{Diagnostics using  non-Integrated Signal}{Inductive probes}
 \begin{columns}
   \column{0.4\textwidth}
 	\begin{itemize}
-		\only<1> { \item Usally as linear combinations of flux Loop and/or field probes ( analog adders)
-			        \item Direct information on Plasma Speed:  $V(t) \propto Vel_{R,Z}(t)$
+		\only<1> { \item Direct information on Plasma Speed:  $V(t) \propto I_{plasma}(t) \cdot Vel_{R,Z}(t)$
 			\begin{itemize}
 				\item Used as controllable variables for active control
 			\end{itemize}
+			 \item Usually as linear combinations of flux loops and field probes (analog electronic adders)
  		}
 		\only<2> {\item High Frequency MHD plasma instabilities  detection and control $V(t) \propto \dot{B(t)}  \sim \omega B(t)$
 			\begin{itemize}
@@ -1103,7 +1112,7 @@ $V_{out}(t) = -\frac{1}{\tau} \int_0^t V_{in}(t') dt' = \Phi (t)  / \tau $
 \begin{frame}{Non-Integrated Signal}{MHD Instabilities mode number detection}
  \begin{itemize}
 	\item Usual MHD perturbation: $\delta B(t) \propto \delta B(r) \cos (m\theta + n\phi -\omega t ) $
-		 \item Mode numbers {\color{red}  $m, n$}  are determined by the phase shift between equally separated Mirnov coils, by Fourier Analysis.
+		 \item Mode numbers {\color{red}  $m, n$}  can be determined by the phase shift between equally separated Mirnov coils, by Fourier Analysis.
 % %		\item Other techniques:
 	 \end{itemize}
 	 \begin{columns}
@@ -1341,20 +1350,20 @@ Example
  	 \end{columns}
 \end{frame}
 
-\subsection{ITER Diagnotics}
-\begin{frame}{ITER diagnostics}{Functional requirements}
-		Provide accurate measurements of plasma behavior and performance.
-
-  	\begin{itemize}
-		\item  3 categories of measurement parameters.
-	\end{itemize}
-	\begin{tabular}{|c|p{4 cm}|p{4 cm}|}
-		\hline
-		\textbf {Group}& \textbf {Description} & \textbf {Machine operation? }\\\hline
-		1 & Machine protection and Basic machine control & \textit{Advanced} operation unable  without  this\\\hline
-		1b & advanced plasma control & Unable  without  \\\hline
-		2& Evaluation and physics studies & Able  without  \\\hline
-	\end{tabular}
+\subsection{ITER Diagnostics}
+%\begin{frame}{ITER diagnostics}{Functional requirements}
+%		Provide accurate measurements of plasma behavior and performance.
+%
+%  	\begin{itemize}
+%		\item  3 categories of measurement parameters.
+%	\end{itemize}
+%	\begin{tabular}{|c|p{4 cm}|p{4 cm}|}
+%		\hline
+%		\textbf {Group}& \textbf {Description} & \textbf {Machine operation? }\\\hline
+%		1 & Machine protection and Basic machine control & \textit{Advanced} operation unable  without  this\\\hline
+%		1b & advanced plasma control & Unable  without  \\\hline
+%		2& Evaluation and physics studies & Able  without  \\\hline
+%	\end{tabular}
 %  		\begin{itemize} %enumerate
 %			\item  1 Machine protection and Basic machine control
 %	(machine operation unable  without  this group)
@@ -1363,7 +1372,7 @@ Example
 %			\item 2 2 evaluation and physics studies
 %	(machine operation able  without  this group.
 %		\end{itemize}
-\end{frame}
+%\end{frame}
 
 \begin{frame}{ITER diagnostics}{Magnetic Set}
 Total \~ 1700 sensors, 19 types,  $>300\,km$ of cable
