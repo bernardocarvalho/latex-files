@@ -248,12 +248,11 @@ Sinais na circulação numa malha.
     \\~
     Indutores (Bobines):
     \begin{equation}
-        \color{red}
         V_L = - L\frac{\mathrm{d} I}{\mathrm{d} t}
     \end{equation}
      Indutância do solenóide:
     \begin{equation}
-        \color{red}
+  %      \color{red}
         L = \mu_0 \frac{N^2 A}{l} \qquad [\SI{}{\henry}]
     \end{equation}
 }
@@ -277,10 +276,19 @@ Sinais na circulação numa malha.
 Forma integral
     \begin{tabular}{||l|r||}
         \hline  {\bf Lei} & {\bf Equação }\\
-        \hline Gauss para \(\vec{E}\)  & \( \oint \vec{E}\cdot  \mathrm{d}\vec{A}  = \frac{e}{\varepsilon_0} \)\\
+        \hline Gauss para \(\vec{E}\)  & \( \oint \vec{E}\cdot  \mathrm{d}\vec{A}  = \frac{q}{\varepsilon_0} \)\\
         \hline Gauss para \(\vec{B}\)  & \( \oint \vec{B}\cdot  \mathrm{d}\vec{A}  = 0 \)\\
         \hline Faraday  & \( \oint \vec{E} \cdot  \mathrm{d}\vec{l}  = -\frac{\mathrm{d}\Phi_{mag}}{\mathrm{d} t} \)\\
         \hline Ampère-Maxwell  & \( \oint \vec{B} \cdot  \mathrm{d}\vec{l}  = \mu_0 I +\mu_0 \varepsilon_0\frac{\mathrm{d}\Phi_{ele}}{\mathrm{d} t} \)\\
+        \hline
+    \end{tabular} 
+Forma diferencial
+    \begin{tabular}{||l|r||}
+        \hline  {\bf Lei} & {\bf Equação }\\
+        \hline Gauss para \(\vec{E}\)  & \(\vec{\nabla} \cdot \vec{E}  = \vec{div} \vec{E}  = \frac{\rho}{\varepsilon_0} \)\\
+        \hline Gauss para \(\vec{B}\)  & \( \vec{\nabla} \cdot \vec{E}  = 0 \)\\
+        \hline Faraday  & \( \vec{\nabla} \times \vec{E} =  rot \vec{E} = -\frac{\mathrm{d}\vec{B}}{\mathrm{d} t} \)\\
+        \hline Ampère-Maxwell  & \( \vec{\nabla} \times \vec{B}  = \mu_0 \left( \vec{J}  + \varepsilon_0\frac{\mathrm{d}\vec{E}}{\mathrm{d} t} \right) \)\\
         \hline
     \end{tabular} 
 }
@@ -302,9 +310,30 @@ Forma integral
         F_{cent} =  m \frac{v^2}{r} 
     \end{equation*}
 }
-
+\mybox{Circuitos RLC em Corrente Alternada (AC)}{
+    Frequência (angular) de Ressonância:
+    \begin{align}
+        \omega_0 &= \frac{1}{\sqrt{LC}}  \qquad [\SI{}{\radian\per\second}] \\
+        f_{ress} \equiv \frac{\omega_0}{2 \pi} &= \frac{1}{2 \pi \sqrt{LC}}  \qquad [\SI{}{\hertz}] = [\SI{}{\per\second}] 
+    \end{align}
+    Reatâncias:
+    \begin{align}
+        X_L &= \omega  L = 2 \pi f L \qquad [\SI{}{\ohm}]\\
+        X_C &= \frac{1}{\omega C} \qquad [\SI{}{\ohm}]
+    \end{align}
+    Corrente máxima/eficaz(rms) num circuito série RLC:
+    \begin{align}
+        I_{max} = \frac{\varepsilon_{max}}{Z} &= \frac{\varepsilon_{max}}{\sqrt{R^2 + \left( X_L - X_C\right)^2}}\qquad [\SI{}{\ampere}]\\
+        I_{rms}   &= \frac{\varepsilon_{rms}}{\sqrt{R^2 + \left( 2 \pi f L - \frac{1}{2 \pi f C} \right)^2}}
+    \end{align}
+    Potência média dissipada:
+    \begin{equation}
+        P_{rms} = I_{rms}^2 R
+    \end{equation}
+}
 \end{multicols}
-\mybox{Circuitos em Corrente Contínua (DC)}{
+
+\mybox{Circuitos em Corrente Contínua (DC). Condições Limite}{
     \begin{tabular}{||l|l|l|l|l||}
         \hline   &{\bf $t=0^+$} &{\bf $t\to\infty$} &{\bf Carga} &{\bf Descarga}\\
         \hline C  & $V_C = 0$ (CC) & $I_C =0 $ (CA) &$V_C(t) = V_{f} (1-e^{-t/\tau_C}) $ &$V_C(t) = V_{0} e^{-t/\tau_C}$\\ 
