@@ -37,7 +37,7 @@
 \pagestyle{fancy}
 \fancyhf{} % clear all header and footer fields
 \renewcommand{\headrulewidth}{0pt} % no line in header area
-\fancyhead[C]{Formulário EO-LETI 2025} % Center
+\fancyhead[C]{Formulário EO-LETI 2025.v7} % Center
 
 % New command for creating boxes with black text
 \newcommand{\mybox}[2]{
@@ -56,12 +56,13 @@
 \hline
 {\bf Name}&{\bf Símbolo}&{\bf Valor}&{\bf Unidade}\\
 \hline\hline
-Número $\pi$                 &$\pi$& $ 3.14159265358979323846...\approx 3.14 $ &\\
+Número $\pi$                 &$\pi$& $ 3.1415926535...\approx 3.14 $ &\\
 Carga Elementar (electrão)           &$e$& $\SI{-1.602176634e-19}{\coulomb}$& $\SI{}{\coulomb}$\\
 Permitividade Eléctrica & $\varepsilon_0$ & $\SI{8.85e-12}{}$ & $\SI{}{\coulomb\squared\per\newton\per\meter\squared}$\\
-Permeabilidade Magnética do Vácuo & $\mu_0$ &  $4 \pi \times 10^{-7}$ & $\SI{}{\tesla\meter\per\ampere}$\\
 Constante de Coulomb:  & $\kappa_e =\frac{1}{4\pi\varepsilon_0}$ & 
     $\approx \SI{9e9}{}$ & $\SI{}{\newton\meter\squared\per\coulomb\squared}$\\
+Permeabilidade Magnética do Vácuo & $\mu_0$ &  $4 \pi \times 10^{-7}$ & $\SI{}{\tesla\meter\per\ampere}$\\
+Velocidade da Luz no Vácuo & $ c= \frac{1}{\sqrt{\varepsilon_0 \mu_0}}$ & $\SI{2.99792458e8}{}$ & $\SI{}{\meter\per\second}$\\
 Constante Gravitação Universal & $G$ & $\SI{6.67430e-11}{}$ & $\SI{}{\meter\cubed\per\kilogram\per\second\squared}$\\
 Número de Avogadro &$N_A$ & $\SI{6.02e23}{}$ &$\SI{}{\per\mole}$\\ 
 Massa do protão &$m_p$ & $\SI{1.67e-27}{}$ &$\SI{}{\kilogram}$\\ 
@@ -70,12 +71,26 @@ Massa do electrão &$m_e$ & $\SI{9.1e-31}{}$ &$\SI{}{\kilogram}$\\
 \end{tabular}
 }
 
+\mybox{Equações (Leis) de Maxwell.}{
+    \begin{tabular}{||l|r|r||}
+        \hline  {\bf Lei} & {\bf Forma integral}&{\bf Forma diferencial}\\
+        \hline Gauss para \(\vec{E}\)  & \( \oint \vec{E}\cdot  \mathrm{d}\vec{A}  = \frac{q}{\varepsilon_0} \)
+                                       & \(\vec{\nabla} \cdot \vec{E}  = \vec{div} \vec{E}  = \frac{\rho}{\varepsilon_0} \)\\
+        \hline Gauss para \(\vec{B}\)  & \( \oint \vec{B}\cdot  \mathrm{d}\vec{A}  = 0 \) &\( \vec{\nabla} \cdot \vec{E}  = 0 \)\\
+        \hline Faraday  & \( \oint \vec{E} \cdot  \mathrm{d}\vec{l}  = -\frac{\mathrm{d}\Phi_{mag}}{\mathrm{d} t} \) 
+                        &\( \vec{\nabla} \times \vec{E} =  rot \vec{E} = -\frac{\mathrm{d}\vec{B}}{\mathrm{d} t} \)\\
+        \hline Ampère-Maxwell  & \( \oint \vec{B} \cdot  \mathrm{d}\vec{l}  = \mu_0 I +\mu_0 \varepsilon_0\frac{\mathrm{d}\Phi_{ele}}{\mathrm{d} t} \)
+                               &\( \vec{\nabla} \times \vec{B}  = \mu_0 \left( \vec{J}  + \varepsilon_0\frac{\mathrm{d}\vec{E}}{\mathrm{d} t} \right) \)\\
+        \hline
+    \end{tabular} 
+}
 \mybox{Associações de Componentes}{
     \begin{tabular}{||l|l|l||}
         \hline & {\bf Série} &{\bf Paralelo}\\
         \hline  Resistências & $ R_{ser} = R_1 + R_2 + R_i  + \cdots $ & $\frac{1}{R_{par}} = \frac{1}{R_1} +\frac{1}{R_2}+\frac{1}{R_i}+ \cdots$ \\ 
         \hline  Força Electromotrizes / Baterias & $\epsilon_{ser} = \epsilon_1 +\epsilon_2 + \epsilon_i  + \cdots $ & {\bf Nunca Usar!!!}\\ 
         \hline  Condensadores & $\frac{1}{C_{ser}} = \frac{1}{C_1} +\frac{1}{C_2}+\frac{1}{C_i}+ \cdots$ & $ C_{par} = C_1 + C_2 + C_i  + \cdots $ \\ 
+        \hline  Bobines & $ L_{ser} = L_1+ L_2 + L_i  + \cdots $ & $\frac{1}{L_{par}} = \frac{1}{L_1} +\frac{1}{L_2}+\frac{1}{L_i}+ \cdots$ \\ 
         \hline
     \end{tabular}
 }
@@ -144,12 +159,14 @@ criado por uma carga eléctrica \(q\) pontual.
             I &= \frac{\mathrm{d} Q}{\mathrm{d} t}  = J \cdot A\qquad [\mathrm{A}]\\
             \vec{J} &= \sigma \vec{E} = \frac{1}{\rho} \vec{E}
         \end{align}
+        %\vfill\null
+        %\columnbreak
         Lei de Ohm:
         \begin{align}
             V &= R I \\
             R &= \rho \frac{A}{d}  \qquad [\mathrm{\Omega}]
         \end{align}
-\end{multicols}
+        \end{multicols}
         Potencia Eléctrica dissipada por Efeito de Joule
         \begin{equation}
             P = V I = \frac{V^2}{R} = I^2 R\qquad [\mathrm{W}]\\
@@ -168,8 +185,8 @@ criado por uma carga eléctrica \(q\) pontual.
 Sinais na circulação numa malha.
 \begin{multicols}{2}
     \begin{center}
- \includegraphics[width=0.8\columnwidth]{Kirk_R.png}
- \includegraphics[width=0.8\columnwidth]{Kirk_V.png}
+      \includegraphics[width=0.8\columnwidth]{Kirk_R.png}
+      \includegraphics[width=0.8\columnwidth]{Kirk_V.png}
  %\includegraphics[width=0.3\textwidth]{Kirk_V.png}
     \end{center}
 \end{multicols}
@@ -248,16 +265,16 @@ Sinais na circulação numa malha.
     \\~
     Indutores (Bobines):
     \begin{equation}
-        V_L = - L\frac{\mathrm{d} I}{\mathrm{d} t}
+        V_L = - L\frac{\mathrm{d} I}{\mathrm{d} t} \qquad [\SI{}{\volt}]
     \end{equation}
-     Indutância do solenóide:
+     Indutância do Solenóide:
     \begin{equation}
   %      \color{red}
         L = \mu_0 \frac{N^2 A}{l} \qquad [\SI{}{\henry}]
     \end{equation}
 }
 \mybox{Ferromagnetismo.}{
-    Magnetização do Material $\vec{M}$ e Susceptibilidade Magnética $\chi$:
+    Magnetização do Material $\vec{M}$ e Susceptibilidade Magnética $\chi_m$:
     \begin{equation}
         \vec{M} = \chi_m\frac{\vec{B}_{aplicado}}{\mu_0}
     \end{equation}
@@ -272,26 +289,6 @@ Sinais na circulação numa malha.
     \end{equation}
 }
 %
-\mybox{Equações (Leis) de Maxwell.}{
-Forma integral
-    \begin{tabular}{||l|r||}
-        \hline  {\bf Lei} & {\bf Equação }\\
-        \hline Gauss para \(\vec{E}\)  & \( \oint \vec{E}\cdot  \mathrm{d}\vec{A}  = \frac{q}{\varepsilon_0} \)\\
-        \hline Gauss para \(\vec{B}\)  & \( \oint \vec{B}\cdot  \mathrm{d}\vec{A}  = 0 \)\\
-        \hline Faraday  & \( \oint \vec{E} \cdot  \mathrm{d}\vec{l}  = -\frac{\mathrm{d}\Phi_{mag}}{\mathrm{d} t} \)\\
-        \hline Ampère-Maxwell  & \( \oint \vec{B} \cdot  \mathrm{d}\vec{l}  = \mu_0 I +\mu_0 \varepsilon_0\frac{\mathrm{d}\Phi_{ele}}{\mathrm{d} t} \)\\
-        \hline
-    \end{tabular} 
-Forma diferencial
-    \begin{tabular}{||l|r||}
-        \hline  {\bf Lei} & {\bf Equação }\\
-        \hline Gauss para \(\vec{E}\)  & \(\vec{\nabla} \cdot \vec{E}  = \vec{div} \vec{E}  = \frac{\rho}{\varepsilon_0} \)\\
-        \hline Gauss para \(\vec{B}\)  & \( \vec{\nabla} \cdot \vec{E}  = 0 \)\\
-        \hline Faraday  & \( \vec{\nabla} \times \vec{E} =  rot \vec{E} = -\frac{\mathrm{d}\vec{B}}{\mathrm{d} t} \)\\
-        \hline Ampère-Maxwell  & \( \vec{\nabla} \times \vec{B}  = \mu_0 \left( \vec{J}  + \varepsilon_0\frac{\mathrm{d}\vec{E}}{\mathrm{d} t} \right) \)\\
-        \hline
-    \end{tabular} 
-}
 \mybox{Dinâmica}{
     Força e Aceleração (2ª Lei de Newton):
     \begin{equation*}
@@ -317,18 +314,74 @@ Forma diferencial
         f_{ress} \equiv \frac{\omega_0}{2 \pi} &= \frac{1}{2 \pi \sqrt{LC}}  \qquad [\SI{}{\hertz}] = [\SI{}{\per\second}] 
     \end{align}
     Reatâncias:
-    \begin{align}
-        X_L &= \omega  L = 2 \pi f L \qquad [\SI{}{\ohm}]\\
-        X_C &= \frac{1}{\omega C} \qquad [\SI{}{\ohm}]
-    \end{align}
+    \begin{multicols}{2}
+    \begin{equation*}
+        X_L = \omega  L = 2 \pi f L 
+    \end{equation*}
+    \begin{equation}
+        X_C = \frac{1}{\omega C} \qquad [\SI{}{\ohm}]
+    \end{equation}
+    \end{multicols}
     Corrente máxima/eficaz(rms) num circuito série RLC:
     \begin{align}
         I_{max} = \frac{\varepsilon_{max}}{Z} &= \frac{\varepsilon_{max}}{\sqrt{R^2 + \left( X_L - X_C\right)^2}}\qquad [\SI{}{\ampere}]\\
         I_{rms}   &= \frac{\varepsilon_{rms}}{\sqrt{R^2 + \left( 2 \pi f L - \frac{1}{2 \pi f C} \right)^2}}
     \end{align}
-    Potência média dissipada:
+    Potência média dissipada (apenas nas resistências):
     \begin{equation}
-        P_{rms} = I_{rms}^2 R
+        P_{rms} = I_{rms}^2 R  \qquad [\SI{}{\watt}]
+    \end{equation}
+}
+\mybox{Ondas Electromagnéticas (EM)}{
+    \begin{tabular}{ll}
+        $\vec{E}(x,t) = \vec{E}_0 \sin(kx- \omega t)$ & $\vec{B}(x,t) = \vec{B}_0 \sin(kx- \omega t)$ \\ 
+        $|\vec{E}| = c|\vec{B}|$ & \\
+        \hline
+    \end{tabular} 
+    \begin{tabular}{lll}
+        $c = \frac{1}{\sqrt{\varepsilon_0 \mu}}$ &$c = \lambda f$ & \\
+        $\omega = 2 \pi f$ & $k = \frac{2 \pi}{\lambda}$ & \\ 
+        Vector de Poynting &      $\vec{S} = \frac{1}{\mu_0}\vec{E} \times \vec{B}$ \,[\SI{}{\watt\per\meter\squared}] & $S_{med}= \frac{E_{max}^2}{2\mu_0 c}$ \\ 
+%= \frac{E_{max}B_{max}}{2\mu_0 }
+        \hline Densidade de Energia & $u_e=\frac{1}{2}\varepsilon_0 E_0^2$ & $u_m=\frac{1}{2}\frac{B_0^2}{\mu_0}$ \\
+        de uma onda EM &  $u= u_e +u_m$ & $u= \varepsilon_0 E_0^2$\\
+        \hline Intensidade  & &\\
+        de uma onda EM & $I = \frac{\mathrm{Potencia}}{\mathrm{Area}} = \frac{1}{2}S$ & $I = \frac{\varepsilon_0 c}{2} E_0^2$ \\
+        \hline Pressão de Radiação  & &\\
+        de uma onda EM & $P_{rad} = \frac{I}{c} = \frac{ E_0^2}{\mu_0 c^2 } \,[\SI{}{\newton\per\meter\squared}] $
+    \end{tabular} 
+    {\bf Interferência das Ondas.}\\
+  Quando a luz passa por duas fendas finas:
+  \begin{multicols}{2}
+    Riscas Claras:
+    \begin{equation*}
+      y_{max} = m\frac{L \lambda}{d}; m=0,1,2,\ldots
+    \end{equation*}
+    Riscas Escuras:
+    \begin{equation*}
+      y_{min} = (m+\frac{1}{2})\frac{L \lambda}{d}; m=0,1,2,\ldots
+    \end{equation*}
+  \end{multicols}
+}
+\mybox{Optica Geométrica}{
+    Indice de Refração
+    \begin{equation}
+      n \equiv \frac{c}{\upsilon}
+    \end{equation}
+  Reflexão e Refração:
+  \begin{multicols}{2}
+    Lei da Reflexão
+    \begin{equation*}
+      \theta_r= \theta_i 
+    \end{equation*}
+    Lei de Snell (refração):
+    \begin{equation*}
+      n_1 \sin{\theta_1} = n_2 \sin{\theta_2}
+    \end{equation*}
+  \end{multicols}
+   Angulo de Reflexão Total. Luz $n_1 \to n_2$, $n_1 > n_2$.
+    \begin{equation}
+      \theta_{i_{critico}} = \arcsin{\frac{n_2}{n_1}} = \arcsin{\frac{\upsilon_1}{\upsilon_2}}
     \end{equation}
 }
 \end{multicols}
